@@ -314,7 +314,7 @@ class FilesSshkeyMapHandler(FilesCache):
           Number of bytes written to the target.
         """
         sshkey_entry = '%s:%s' % (entry.name, entry.sshkey)
-        target.write(sshkey_entry + '\n')
+        target.write(sshkey_entry.encode() + b'\n')
         return len(sshkey_entry) + 1
 
 
